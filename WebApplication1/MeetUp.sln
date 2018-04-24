@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetUp", "WebApplication1\MeetUp.csproj", "{CDEAD62A-D94D-4B43-B8C1-3308931CFCCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{8C88412E-A994-44C9-AB7F-B31C4789C6AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDEAD62A-D94D-4B43-B8C1-3308931CFCCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDEAD62A-D94D-4B43-B8C1-3308931CFCCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDEAD62A-D94D-4B43-B8C1-3308931CFCCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDEAD62A-D94D-4B43-B8C1-3308931CFCCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C88412E-A994-44C9-AB7F-B31C4789C6AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C88412E-A994-44C9-AB7F-B31C4789C6AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C88412E-A994-44C9-AB7F-B31C4789C6AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C88412E-A994-44C9-AB7F-B31C4789C6AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01241463-2F51-4869-A586-16B701DF6B39}
+	EndGlobalSection
+EndGlobal
