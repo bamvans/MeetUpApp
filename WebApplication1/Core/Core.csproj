@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Database\Models\Category.cs" />
     <Compile Include="Database\Models\City.cs" />
     <Compile Include="Database\Models\Group.cs" />
