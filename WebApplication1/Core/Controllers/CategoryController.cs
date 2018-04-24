@@ -1,4 +1,5 @@
-﻿using Core.Database.Models;
+﻿using Core.Database;
+using Core.Database.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +11,13 @@ namespace Core.Controllers
 {
     public class CategoryController
     {
+        private MeetUpContext _context;
+
         [HttpGet]
-        [Route("api/parentguardianreport")]
-        public async Task<Category[]> GetParentGuardianReports()
+        [Route("api/category")]
+        public async Task<dynamic> GetCategories()
         {
-            return (await ParentGuardianReportManager.GetParentGuardianReports())
-                .Select(x => new Category(x))
-                .ToArray();
+            return _context.Category.ToList();
         }
 
 
