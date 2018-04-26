@@ -1,4 +1,5 @@
-﻿using Core.Database.Models;
+﻿using CoreMeetUp.Database;
+using CoreMeetUp.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -13,7 +14,7 @@ namespace CoreMeetUp.Controllers
     public class CategoryController : ApiController
     {
         #region Get
-        public static async Task<Category[]> GetAllAsync()
+        public static async Task<Category> GetAllAsync()
         {
             using (var db = new DatabaseContext())
             {

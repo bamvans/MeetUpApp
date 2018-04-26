@@ -1,8 +1,9 @@
-﻿using System;
+﻿using CoreMeetUp.Models;
+using System;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 
-namespace Core.Database.Models
+namespace CoreMeetUp.Database
 {
     public  class DatabaseContext : DbContext
     {

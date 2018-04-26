@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Database.Models
+namespace CoreMeetUp.Database
 {
     public class Login
     {
