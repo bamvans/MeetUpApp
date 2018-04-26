@@ -1,4 +1,5 @@
-﻿using Core.Database.Models;
+﻿using CoreMeetUp.Database;
+using CoreMeetUp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
