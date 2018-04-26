@@ -15,6 +15,8 @@ namespace CoreMeetUp.Controllers
 {
     public class CategoryController : ApiController
     {
+        [HttpGet]
+        [Route("api/category")]
         public async Task<CategoryDTO[]> Get()
         {
             using (var repo = new CategoryRepository())
@@ -23,6 +25,8 @@ namespace CoreMeetUp.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("api/category/{id}")]
         public async Task<CategoryDTO> Get(int id)
         {
             using (var repo = new CategoryRepository())
@@ -33,6 +37,8 @@ namespace CoreMeetUp.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("api/category/create")]
         public async Task<int> Post(CategoryDTO item)
         {
             using (var repo = new CategoryRepository())
@@ -46,6 +52,8 @@ namespace CoreMeetUp.Controllers
             }
         }
 
+        [HttpPut]
+        [Route("api/category")]
         public async Task Put(CategoryDTO item)
         {
             using (var repo = new CategoryRepository())
@@ -57,6 +65,8 @@ namespace CoreMeetUp.Controllers
             }
         }
 
+        [HttpDelete]
+        [Route("api/category")]
         public async Task Delete(CategoryDTO item)
         {
             using (var repo = new CategoryRepository())

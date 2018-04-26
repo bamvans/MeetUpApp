@@ -13,6 +13,8 @@ namespace CoreMeetUp.Controllers
 {
     public class GroupController : ApiController
     {
+        [HttpGet]
+        [Route("api/group")]
         public async Task<GroupDTO[]> Get()
         {
             using (var repo = new GroupRepository())
@@ -21,6 +23,8 @@ namespace CoreMeetUp.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("api/group/{id}")]
         public async Task<GroupDTO> Get(int id)
         {
             using (var repo = new GroupRepository())
@@ -31,6 +35,8 @@ namespace CoreMeetUp.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("api/group/create")]
         public async Task<int> Post(GroupDTO item)
         {
             using (var repo = new GroupRepository())
@@ -44,6 +50,8 @@ namespace CoreMeetUp.Controllers
             }
         }
 
+        [HttpPut]
+        [Route("api/group")]
         public async Task Put(GroupDTO item)
         {
             using (var repo = new GroupRepository())
@@ -55,6 +63,8 @@ namespace CoreMeetUp.Controllers
             }
         }
 
+        [HttpDelete]
+        [Route("api/group")]
         public async Task Delete(GroupDTO item)
         {
             using (var repo = new GroupRepository())

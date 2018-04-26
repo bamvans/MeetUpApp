@@ -13,6 +13,8 @@ namespace CoreMeetUp.Controllers
 {
     public class CityController : ApiController
     {
+        [HttpGet]
+        [Route("api/city")]
         public async Task<CityDTO[]> Get()
         {
             using (var repo = new CityRepository())
@@ -21,6 +23,8 @@ namespace CoreMeetUp.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("api/city/{id}")]
         public async Task<CityDTO> Get(int id)
         {
             using (var repo = new CityRepository())
@@ -31,6 +35,8 @@ namespace CoreMeetUp.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("api/city/create")]
         public async Task<int> Post(CityDTO item)
         {
             using (var repo = new CityRepository())
@@ -44,6 +50,8 @@ namespace CoreMeetUp.Controllers
             }
         }
 
+        [HttpPut]
+        [Route("api/city")]
         public async Task Put(CityDTO item)
         {
             using (var repo = new CityRepository())
@@ -55,6 +63,8 @@ namespace CoreMeetUp.Controllers
             }
         }
 
+        [HttpDelete]
+        [Route("api/city")]
         public async Task Delete(CityDTO item)
         {
             using (var repo = new CityRepository())

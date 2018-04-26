@@ -13,6 +13,8 @@ namespace CoreMeetUp.Controllers
 {
     public class PersonController : ApiController
     {
+        [HttpGet]
+        [Route("api/person")]
         public async Task<PersonDTO[]> Get()
         {
             using (var repo = new PersonRepository())
@@ -21,6 +23,8 @@ namespace CoreMeetUp.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("api/person/{id}")]
         public async Task<PersonDTO> Get(int id)
         {
             using (var repo = new PersonRepository())
@@ -31,6 +35,8 @@ namespace CoreMeetUp.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("api/person/create")]
         public async Task<int> Post(PersonDTO item)
         {
             using (var repo = new PersonRepository())
@@ -44,6 +50,8 @@ namespace CoreMeetUp.Controllers
             }
         }
 
+        [HttpPut]
+        [Route("api/person")]
         public async Task Put(PersonDTO item)
         {
             using (var repo = new PersonRepository())
@@ -55,6 +63,8 @@ namespace CoreMeetUp.Controllers
             }
         }
 
+        [HttpDelete]
+        [Route("api/person")]
         public async Task Delete(PersonDTO item)
         {
             using (var repo = new PersonRepository())
