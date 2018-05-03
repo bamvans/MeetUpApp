@@ -6,10 +6,7 @@ import { Injectable } from '@angular/core'
 import 'rxjs/add/operator/map';  
 import { Category, City } from '../../settings_screen/services/settingsscreen.service';
 
-@Component({
-    templateUrl: './group.component.html',
-    styleUrls: ['./group.component.css']
-})
+@Injectable()
 export class GroupService {
 
     constructor(private http: Http, private router: Router, private sanitizer: DomSanitizer) {

@@ -5,10 +5,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Injectable } from '@angular/core'  
 import 'rxjs/add/operator/map';  
 
-@Component({
-    templateUrl: './settingsscreen.component.html',
-    styleUrls: ['./settingsscreen.component.css']
-})
+@Injectable()
 export class SettingsScreenService {
 
     constructor(private http: Http, private router: Router, private sanitizer: DomSanitizer) {
