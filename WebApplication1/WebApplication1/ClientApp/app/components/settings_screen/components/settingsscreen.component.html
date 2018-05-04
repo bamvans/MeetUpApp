@@ -1,0 +1,18 @@
+<h1> This is our Categories component</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Mobile No</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Categories of categories">
+            <td>{{Categories.id}}</td>
+            <td>{{Categories.name}}</td>
+            <td>{{Categories.description}}</td>
+        </tr>
+    </tbody>
+</table>  
