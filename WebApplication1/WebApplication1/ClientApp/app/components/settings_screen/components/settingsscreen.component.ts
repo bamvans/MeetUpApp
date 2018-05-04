@@ -18,6 +18,7 @@ export class SettingsScreenComponent implements OnInit{
         //calling a method  
         this.LoadCategories();
     }
+
     //Created a method to call getCategories method in our SettingsScreen Service.  
     LoadCategories() {
         this.settings_screenService.getCategories().subscribe((x) => this.categories = x);
