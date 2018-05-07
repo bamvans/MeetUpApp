@@ -28,7 +28,7 @@ export class AuthService {
     }
 
     public create(user: User) {
-        return this.http.post("http://localhost:60440/api/login", user);
+        return this.http.post("http://localhost:60440/api/login/create", user);
     }
 
     public update(user: User) {
