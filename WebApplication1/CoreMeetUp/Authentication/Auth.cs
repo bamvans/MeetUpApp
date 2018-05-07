@@ -12,7 +12,6 @@ namespace CoreMeetUp.Authentication
 {
     public class Auth
     {
-
         public void Configuration(IAppBuilder app)
         {
 
