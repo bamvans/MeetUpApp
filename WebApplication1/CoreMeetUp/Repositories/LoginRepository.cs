@@ -9,31 +9,31 @@ using System.Web;
 
 namespace CoreMeetUp.Repositories
 {
-    public class PersonRepository : BaseRepository
+    public class LoginRepository : BaseRepository
     {
         #region Get
 
-        public Task<Person[]> GetAll()
+        public Task<Login[]> GetAll()
         {
-            return context.Person.ToArrayAsync();
+            return context.Login.ToArrayAsync();
         }
 
-        public Task<Person> GetById(int id)
+        public Task<Login> GetById(int id)
         {
-            return context.Person.FirstOrDefaultAsync(x => x.Id == id);
+            return context.Login.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public Task<Person> GetbyName(string name)
+        public Task<Login> GetByEmail(string email)
         {
-            return context.Person.FirstOrDefaultAsync(x => x.FirstName == name);
+            return context.Login.FirstOrDefaultAsync(x => x.Email == email);
         }
         #endregion
 
         #region Create
 
-        public Task Create(Person person)
+        public Task Create(Login login)
         {
-            context.Person.Add(person);
+            context.Login.Add(login);
             return Task.FromResult(true);
         }
 
@@ -41,9 +41,9 @@ namespace CoreMeetUp.Repositories
 
         #region Delete
 
-        public Task Delete(Person person)
+        public Task Delete(Login login)
         {
-            context.Person.Remove(person);
+            context.Login.Remove(login);
             return Task.FromResult(true);
         }
 

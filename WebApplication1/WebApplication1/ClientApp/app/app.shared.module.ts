@@ -9,6 +9,8 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { SettingsScreenComponent } from './components/settings_screen/components/settingsscreen.component';
+import { GroupComponent } from './components/groups/components/group.component';
 import { SettingsScreenModule } from './components/settings_screen/settingsscreen.module';
 import { GroupModule } from './components/groups/group.module';
 
@@ -18,7 +20,7 @@ import { GroupModule } from './components/groups/group.module';
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
-        HomeComponent
+        HomeComponent,
     ],
     imports: [
         CommonModule,
