@@ -17,8 +17,8 @@ export class AuthService {
             .map((response: Response) => <User[]>response.json());
     }
 
-    public getById(_id: string) {
-        return this.http.get("http://localhost:60440/api/login" + _id)
+    public getById(id: string) {
+        return this.http.get("http://localhost:60440/api/login" + id)
             .map((response: Response) => response.json());
     }
 
@@ -35,8 +35,8 @@ export class AuthService {
         return this.http.put("http://localhost:60440/api/login" + user.id, user);
     }
 
-    public delete(_id: string) {
-        return this.http.delete("http://localhost:60440/api/login" + _id);
+    public delete(id: string) {
+        return this.http.delete("http://localhost:60440/api/login" + id);
     }
    
 }
