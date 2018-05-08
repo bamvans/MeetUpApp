@@ -1,17 +1,20 @@
-<h1> This is our Categories component</h1>
-<table border="1">
-    <thead>
-        <tr>
-            <td>Id</td>
-            <td>Name</td>
-            <td>Description</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let Categories of categories">
-            <td>{{Categories.id}}</td>
-            <td>{{Categories.name}}</td>
-            <td>{{Categories.description}}</td>
-        </tr>
-    </tbody>
-</table>  
+<h2>System Settings</h2>
+<div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
+    <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+    <input #gb type="text" pInputText size="50" placeholder="Global Filter">
+</div>
+<p-dataTable [value]="categories" [rows]="10" [paginator]="true" [globalFilter]="gb" #dt [(selection)]="selectedItemCategory" (onRowSelect)="onRowSelect($event)">
+    <p-header>List of Cars</p-header>
+    <p-column field="name" header="Name" [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="description" header="Description" [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="Category" header="Category Name" [filter]="true" filterMatchMode="equals">
+        <ng-template pTemplate="filter" let-col>
+            <p-dropdown [options]="category_Name" [style]="{'width':'100%'}" (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter"></p-dropdown>
+        </ng-template>
+    </p-column>
+    <p-column field="city" header="City Name" [filter]="true" filterMatchMode="in">
+        <ng-template pTemplate="filter" let-col>
+            <p-multiSelect [options]="city_Name" (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter"></p-multiSelect>
+        </ng-template>
+    </p-column>
+</p-dataTable>

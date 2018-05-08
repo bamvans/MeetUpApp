@@ -5,7 +5,8 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { AuthComponent } from './components/auth.component';
 import { AuthService } from './services/auth.service';
-
+import { PasswordModule } from 'primeng/password';
+import { PanelModule } from 'primeng/panel';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AuthService } from './services/auth.service';
         BrowserModule,
         FormsModule,
         HttpModule,
-
+        PasswordModule,
+        PanelModule,
         RouterModule.forRoot([
             { path: 'auth', component: AuthComponent },
             { path: '', redirectTo: 'auth', pathMatch: 'full' }

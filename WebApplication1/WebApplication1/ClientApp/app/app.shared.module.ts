@@ -13,6 +13,7 @@ import { SettingsScreenComponent } from './components/settings_screen/components
 import { GroupComponent } from './components/groups/components/group.component';
 import { SettingsScreenModule } from './components/settings_screen/settingsscreen.module';
 import { GroupModule } from './components/groups/group.module';
+import { AuthModule } from './components/auth/auth.module';
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import { GroupModule } from './components/groups/group.module';
         FormsModule,
         SettingsScreenModule,
         GroupModule,
+        AuthModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
