@@ -21,7 +21,7 @@ import { GroupComponent } from './components/group.component';
         HttpModule,
 
         RouterModule.forRoot([
-            { path: 'group', component: GroupComponent },
+            { path: 'group/:id', component: GroupComponent },
             { path: '', redirectTo: 'group', pathMatch: 'full' }
         ])
     ]

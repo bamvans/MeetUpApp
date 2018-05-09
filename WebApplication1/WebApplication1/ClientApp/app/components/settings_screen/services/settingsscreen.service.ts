@@ -35,6 +35,17 @@ export class SettingsScreenService {
             .map(x => <City>x.json());
     }
 
+    //get category by id
+    public getByIdCategories(id: string) {
+        return this.http.get("http://localhost:60440/api/category" + id)
+            .map((response: Response) => response.json());
+    }
+
+    //get city by id
+    public getByIdCities(id: string) {
+        return this.http.get("http://localhost:60440/city" + id)
+            .map((response: Response) => response.json());
+    }
 }
 
 export interface Category {

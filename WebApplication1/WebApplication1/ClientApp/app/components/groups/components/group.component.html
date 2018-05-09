@@ -1,2 +1,26 @@
 <h2>Groups</h2>
 <h3>Selected Catgory:</h3>
+
+
+
+
+
+<div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
+    <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+    <input #gb type="text" pInputText size="50" placeholder="Global Filter">
+</div>
+<p-dataTable [value]="categoriess" [rows]="10" [paginator]="true" [globalFilter]="gb" #dt [(selection)]="selectedItemCategory" (onRowSelect)="onRowSelect($event)">
+    <p-header>List of Categories</p-header>
+    <p-column field="name" header="Name" [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="description" header="Description" [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="Category" header="Category Name" [filter]="true" filterMatchMode="equals">
+        <ng-template pTemplate="filter" let-col>
+            <p-dropdown [options]="category_Name" [style]="{'width':'100%'}" (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter"></p-dropdown>
+        </ng-template>
+    </p-column>
+    <p-column field="city" header="City Name" [filter]="true" filterMatchMode="in">
+        <ng-template pTemplate="filter" let-col>
+            <p-multiSelect [options]="city_Name" (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter"></p-multiSelect>
+        </ng-template>
+    </p-column>
+</p-dataTable>
