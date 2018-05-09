@@ -45,6 +45,8 @@ export class SettingsScreenComponent implements OnInit{
     }
 
     onRowSelect(event: any) {
+        this.selectedItemCategory = event.data;
+        this.selectedItemCity = event.data;
         this.categoryName = this.selectedItemCategory;
         this.cityName = this.selectedItemCity;
         this.settingsscreenservice.createCategories(this.categoryName).subscribe(result => this.categoryName = result);
@@ -54,6 +56,4 @@ export class SettingsScreenComponent implements OnInit{
         })
         );
     }
-
-
 }

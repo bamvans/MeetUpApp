@@ -4,7 +4,7 @@
     <input #gb type="text" pInputText size="50" placeholder="Global Filter">
 </div>
 <p-dataTable [value]="categories" [rows]="10" [paginator]="true" [globalFilter]="gb" #dt [(selection)]="selectedItemCategory" (onRowSelect)="onRowSelect($event)">
-    <p-header>List of Cars</p-header>
+    <p-header>List of Categories</p-header>
     <p-column field="name" header="Name" [filter]="true" filterPlaceholder="Search"></p-column>
     <p-column field="description" header="Description" [filter]="true" filterPlaceholder="Search"></p-column>
     <p-column field="Category" header="Category Name" [filter]="true" filterMatchMode="equals">

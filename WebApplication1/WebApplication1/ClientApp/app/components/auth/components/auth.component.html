@@ -10,13 +10,13 @@
             <h3 class="first">Username</h3>
             <div class="ui-inputgroup">
                 <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
-                <input type="text" pInputText placeholder="Username">
+                <input type="text" pInputText placeholder="Username" [(ngModel)]="author.email">
             </div>
         </div>
         <h3 class="first">Password</h3>
-        <input pPassword type="password" />
+        <input pPassword type="password" [(ngModel)]="auth.pass"/>
     </div>
         <p-footer>
-            <button pButton type="button" icon="fa-list" label="Login" class="ui-button-success"></button>
+            <button pButton type="button" icon="fa-list" label="Login" class="ui-button-success" (click)="login(author.email,auth.pass)"></button>
         </p-footer>
 </p-panel>
