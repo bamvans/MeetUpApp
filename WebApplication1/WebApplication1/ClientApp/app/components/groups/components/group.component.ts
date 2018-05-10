@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { GroupService } from '../services/group.service';
+import { Component, OnInit, group } from '@angular/core';
+import { GroupService, Group } from '../services/group.service';
 import { Router, ParamMap, ActivatedRoute } from '@angular/router';
 import { SettingsScreenService, Category, City } from '../../settings_screen/services/settingsscreen.service';
 import { SelectItem } from 'primeng/components/common/selectitem';
@@ -12,6 +12,8 @@ export class GroupComponent implements OnInit {
 
     categories: Category;
     cities: City;
+
+    group: Group;
 
     categoryId: string;
     cityId: string;
@@ -33,13 +35,16 @@ export class GroupComponent implements OnInit {
 
     ngOnInit() {
         this.route.paramMap
-            .switchMap((params: ParamMap) => {
+            .subscribe((params: ParamMap) => {
                 let id = params.get('id');
                 let cid = params.get('cid');
                 this.categoryId = id;
                 this.cityId = cid;
                 this.settingsscreenservice.getByIdCategories(this.categoryId).subscribe(result => this.categories = result);
                 this.settingsscreenservice.getByIdCities(this.cityId).subscribe(result => this.cities = result);
+                if (this.cities.name=this.group.city) {
+                    this.groupsservice.getbyCity(this.cities.name).subscribe(result => this.group = result);
+                }
             });
 
         this.settingsscreenservice.getCategories().subscribe(category => this.categoriess = category);

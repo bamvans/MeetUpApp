@@ -23,6 +23,11 @@ export class GroupService {
         return this.http.post("http://localhost:60440/api/group/create", gg)
             .map(x => <Group>x.json());
     }
+
+    public getbyCity(city: string) {
+        return this.http.get("http://localhost:60440/api/group" + city)
+            .map((response: Response) => response.json());
+    }
 }
 
 

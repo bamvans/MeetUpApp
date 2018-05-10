@@ -23,6 +23,10 @@ namespace CoreMeetUp.Repositories
             return context.Group.FirstOrDefaultAsync(x => x.Id == id);
         }
 
+        public Task<Group> GetByCity(string city)
+        {
+            return context.Group.FirstOrDefaultAsync(x => x.City.Name == city);
+        }
         #endregion
 
         #region Create

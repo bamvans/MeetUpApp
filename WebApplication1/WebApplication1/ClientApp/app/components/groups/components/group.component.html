@@ -1,10 +1,28 @@
 <h2>Groups</h2>
 <h3>Selected Catgory:</h3>
-
-
-
-
-
+<h4>{{categories.name}}</h4>
+<h3>Selected City:</h3>
+<h4>{{cities.name}}</h4>
+<div></div>
+<p-dataList [value]="group" [paginator]="true" [rows]="5">
+<p-header>
+    List of Groups
+</p-header>
+<ng-template let-group pTemplate="item">
+    <div class="ui-g ui-fluid group-item">
+        <div class="ui-g-12 ui-md-9">
+            <div class="ui-g">
+                <div class="ui-g-2 ui-sm-6">Group Name: </div>
+                <div class="ui-g-10 ui-sm-6">{{group.name}}</div>
+                <div class="ui-g-2 ui-sm-6">Group Category: </div>
+                <div class="ui-g-10 ui-sm-6">{{group.category}}</div>
+                <div class="ui-g-2 ui-sm-6">Group City: </div>
+                <div class="ui-g-10 ui-sm-6">{{group.city}}</div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+</p-dataList>
 <div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
     <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
     <input #gb type="text" pInputText size="50" placeholder="Global Filter">

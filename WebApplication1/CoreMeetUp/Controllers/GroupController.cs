@@ -35,6 +35,18 @@ namespace CoreMeetUp.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("api/group/{city}")]
+        public async Task<GroupDTO> GebyCityt(string city)
+        {
+            using (var repo = new GroupRepository())
+            {
+                Group existing = await repo.GetByCity(city);
+                if (existing == null) { throw new HttpResponseException(HttpStatusCode.NotFound); }
+                return new GroupDTO(existing);
+            }
+        }
+
         [HttpPost]
         [Route("api/group/create")]
         public async Task<int> Post(GroupDTO item)

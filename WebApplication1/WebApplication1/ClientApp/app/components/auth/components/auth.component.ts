@@ -11,7 +11,7 @@ import { User, AuthService } from '../services/auth.service';
 })
 export class AuthComponent implements OnInit{
 
-    author[]: User[];
+    author: User[];
 
     constructor(private http: Http, private router: Router, private sanitizer: DomSanitizer, protected authService: AuthService) {
 
@@ -26,7 +26,7 @@ export class AuthComponent implements OnInit{
         data.append('grant_type', 'password');
         data.append('username', username);
         data.append('password', password);
-        return this.http.post("http://localhost:60440/api/login", data)
+        return this.http.post("http://localhost:60440/token", data)
             .map(response => {
                 var result = response.json();
                 return result.access_token;

@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { GroupService } from './services/group.service';
 import { GroupComponent } from './components/group.component';
+import { DataListModule } from 'primeng/datalist';
 
 
 
@@ -19,7 +20,7 @@ import { GroupComponent } from './components/group.component';
         BrowserModule,
         FormsModule,
         HttpModule,
-
+        DataListModule,
         RouterModule.forRoot([
             { path: 'group/:id', component: GroupComponent },
             { path: '', redirectTo: 'group', pathMatch: 'full' }
